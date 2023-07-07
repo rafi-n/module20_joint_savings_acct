@@ -40,7 +40,7 @@ contract JointSavings {
     function withdraw(uint amount, address payable recipient) public {
 
         /*
-        Define a `require` statement that checks if the `recipient` is equal to either `accountOne` or `accountTwo`. The `requiere` statement returns the text `"You don't own this account!"` if it does not.
+        Define a `require` statement that checks if the `recipient` is equal to either `accountOne` or `accountTwo`. The `require` statement returns the text `"You don't own this account!"` if it does not.
         */
         require(recipient == accountOne || recipient == accountTwo, "You don't own this account!");
 
@@ -88,7 +88,5 @@ contract JointSavings {
     /*
     Finally, add the **default fallback function** so that your contract can store Ether sent from outside the deposit function.
     */
-    function fallback () external payable {
-        // calledFallbackFun = "Fallback Function Called!";
-    }
+    function() external payable {}
 }
